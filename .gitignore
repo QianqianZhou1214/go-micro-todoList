@@ -22,7 +22,7 @@ profile.cov
 
 user/config/config.ini
 user/go.sum
-
+.idea
 
 # Go workspace file
 go.work
