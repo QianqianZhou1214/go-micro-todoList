@@ -15,7 +15,7 @@ var (
 	Charset    string
 )
 
-func init() {
+func Init() {
 	file, err := ini.Load("./config/config.ini")
 	if err != nil {
 		fmt.Println("config.ini not found", err)
