@@ -10,7 +10,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=Zqq103435@
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=micro_todolist
       - MYSQL_USER=micro_todolist
       - MYSQL_PASSWORD=micro_todolist

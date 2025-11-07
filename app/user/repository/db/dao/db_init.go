@@ -46,5 +46,6 @@ func Database(connString string) error {
 		fmt.Println(err)
 	}
 	_db = db // change to local db
+	migration()
 	return nil
 }

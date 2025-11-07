@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"go-micro-todoList/app/user/repository/db/dao"
