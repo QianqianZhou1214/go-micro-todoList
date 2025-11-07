@@ -28,7 +28,7 @@ func InitDB() {
 }
 
 func Database(connString string) error {
-	var ormLogger logger.Interface
+	var ormLogger logger.Interface = logger.Default.LogMode(logger.Info)
 	db, err := gorm.Open(mysql.New(mysql.Config{
 		DSN:                       connString, // dsn data source name
 		DefaultStringSize:         256,        // default length of string type
