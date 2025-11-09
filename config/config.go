@@ -13,6 +13,12 @@ var (
 	DbPassword string
 	DbName     string
 	Charset    string
+
+	EtcdHost string
+	EtcdPort string
+
+	UserServiceAddress string
+	TaskServiceAddress string
 )
 
 func Init() {
@@ -21,6 +27,18 @@ func Init() {
 		fmt.Println("config.ini not found", err)
 	}
 	LoadMySqlData(file)
+	LoadEtcd(file)
+	LoadServer(file)
+}
+
+func LoadEtcd(file *ini.File) {
+	EtcdHost = file.Section("etcd").Key("EtcdHost").String()
+	EtcdPort = file.Section("etcd").Key("EtcdPort").String()
+}
+
+func LoadServer(file *ini.File) {
+	UserServiceAddress = file.Section("server").Key("UserServiceAddress").String()
+	TaskServiceAddress = file.Section("server").Key("TaskServiceAddress").String()
 }
 
 func LoadMySqlData(file *ini.File) {
