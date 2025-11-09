@@ -1,6 +1,7 @@
 package dao
 
 import (
+	"context"
 	"fmt"
 	"go-micro-todoList/config"
 
@@ -48,4 +49,9 @@ func Database(connString string) error {
 	_db = db // change to local db
 	migration()
 	return nil
+}
+
+func NewDBClient(ctx context.Context) *gorm.DB {
+	db := _db
+	return db.WithContext(ctx)
 }
