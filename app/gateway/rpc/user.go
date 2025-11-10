@@ -8,8 +8,14 @@ import (
 
 func UserLogin(ctx context.Context, req *pb.UserRequest) (resp *pb.UserResponse, err error) {
 	resp, err = UserService.UserLogin(ctx, req)
-	if err != nil || resp.Code != e.Success {
+	if err != nil {
+		if resp == nil {
+			resp = &pb.UserResponse{}
+		}
 		resp.Code = e.Error
+		return
+	}
+	if resp.Code != e.Success {
 		return
 	}
 	return
@@ -17,8 +23,14 @@ func UserLogin(ctx context.Context, req *pb.UserRequest) (resp *pb.UserResponse,
 
 func UserRegister(ctx context.Context, req *pb.UserRequest) (resp *pb.UserResponse, err error) {
 	resp, err = UserService.UserRegister(ctx, req)
-	if err != nil || resp.Code != e.Success {
+	if err != nil {
+		if resp == nil {
+			resp = &pb.UserResponse{}
+		}
 		resp.Code = e.Error
+		return
+	}
+	if resp.Code != e.Success {
 		return
 	}
 	return

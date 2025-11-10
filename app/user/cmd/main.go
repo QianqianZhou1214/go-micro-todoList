@@ -7,7 +7,6 @@ import (
 	"go-micro-todoList/config"
 	"go-micro-todoList/idl/pb"
 
-	"github.com/go-micro/plugins/v4/registry/etcd"
 	"go-micro.dev/v4"
 	"go-micro.dev/v4/registry"
 )
@@ -16,7 +15,7 @@ func main() {
 	config.Init()
 	dao.InitDB()
 
-	etcdReg := etcd.NewRegistry(
+	etcdReg := registry.NewRegistry(
 		registry.Addrs(fmt.Sprintf("%s:%s", config.EtcdHost, config.EtcdPort)),
 	)
 
