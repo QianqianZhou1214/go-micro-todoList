@@ -17,6 +17,12 @@ var (
 	EtcdHost string
 	EtcdPort string
 
+	RabbitMQ         string
+	RabbitMQUser     string
+	RabbitMQPassword string
+	RabbitHost       string
+	RabbitPort       string
+
 	UserServiceAddress string
 	TaskServiceAddress string
 )
@@ -28,12 +34,21 @@ func Init() {
 	}
 	LoadMySqlData(file)
 	LoadEtcd(file)
+	LoadRabbitMq(file)
 	LoadServer(file)
 }
 
 func LoadEtcd(file *ini.File) {
 	EtcdHost = file.Section("etcd").Key("EtcdHost").String()
 	EtcdPort = file.Section("etcd").Key("EtcdPort").String()
+}
+
+func LoadRabbitMq(file *ini.File) {
+	RabbitMQ = file.Section("rabbitmq").Key("RabbitMQ").String()
+	RabbitMQUser = file.Section("rabbitmq").Key("RabbitMQUser").String()
+	RabbitMQPassword = file.Section("rabbitmq").Key("RabbitMQPassword").String()
+	RabbitHost = file.Section("rabbitmq").Key("RabbitHost").String()
+	RabbitPort = file.Section("rabbitmq").Key("RabbitPort").String()
 }
 
 func LoadServer(file *ini.File) {

@@ -5,6 +5,7 @@ go 1.25.1
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.11.0
+	github.com/streadway/amqp v1.1.0
 	go-micro.dev/v4 v4.9.0
 	golang.org/x/crypto v0.40.0
 	google.golang.org/grpc v1.53.0

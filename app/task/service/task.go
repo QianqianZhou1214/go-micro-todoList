@@ -21,6 +21,7 @@ func GetTaskServ() *TaskServ {
 	return TaskSevIns
 }
 
+// create task sending to MQ
 func (t *TaskServ) CreateTask(ctx context.Context, req *pb.TaskRequest, resp *pb.TaskDetailResponse) (err error) {
 	resp.Code = e.Success
 	return
