@@ -8,7 +8,7 @@ require (
 	github.com/streadway/amqp v1.1.0
 	go-micro.dev/v4 v4.9.0
 	golang.org/x/crypto v0.40.0
-	google.golang.org/grpc v1.53.0
+	google.golang.org/grpc v1.76.0
 	google.golang.org/protobuf v1.36.9
 	gopkg.in/ini.v1 v1.67.0
 	gorm.io/driver/mysql v1.6.0
@@ -45,8 +45,8 @@ require (
 	github.com/gobwas/ws v1.0.4 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/goccy/go-yaml v1.18.0 // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/google/uuid v1.3.0 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
+	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
