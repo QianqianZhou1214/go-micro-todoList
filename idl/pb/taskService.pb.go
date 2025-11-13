@@ -26,7 +26,7 @@ type TaskModel struct {
 	// @inject_tag: json:"id" from:"id"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	// @inject_tag: json:"uid" from:"uid"
-	Uid uint32 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
+	Uid uint64 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
 	// @inject_tag: json:"title" from:"title"
 	Title string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
 	// @inject_tag: json:"content" from:"content"
@@ -82,7 +82,7 @@ func (x *TaskModel) GetId() uint64 {
 	return 0
 }
 
-func (x *TaskModel) GetUid() uint32 {
+func (x *TaskModel) GetUid() uint64 {
 	if x != nil {
 		return x.Uid
 	}
@@ -143,7 +143,7 @@ type TaskRequest struct {
 	// @inject_tag: json:"id" from:"id"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	// @inject_tag: json:"uid" from:"uid"
-	Uid uint32 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
+	Uid uint64 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty"`
 	// @inject_tag: json:"title" from:"title"
 	Title string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
 	// @inject_tag: json:"content" from:"content"
@@ -199,7 +199,7 @@ func (x *TaskRequest) GetId() uint64 {
 	return 0
 }
 
-func (x *TaskRequest) GetUid() uint32 {
+func (x *TaskRequest) GetUid() uint64 {
 	if x != nil {
 		return x.Uid
 	}
@@ -379,7 +379,7 @@ const file_idl_taskService_proto_rawDesc = "" +
 	"\x15idl/taskService.proto\x12\x02pb\"\xf1\x01\n" +
 	"\tTaskModel\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x10\n" +
-	"\x03uid\x18\x02 \x01(\rR\x03uid\x12\x14\n" +
+	"\x03uid\x18\x02 \x01(\x04R\x03uid\x12\x14\n" +
 	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
 	"\acontent\x18\x04 \x01(\tR\acontent\x12\x1d\n" +
 	"\n" +
@@ -392,7 +392,7 @@ const file_idl_taskService_proto_rawDesc = "" +
 	"updateTime\"\xdd\x01\n" +
 	"\vTaskRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x10\n" +
-	"\x03uid\x18\x02 \x01(\rR\x03uid\x12\x14\n" +
+	"\x03uid\x18\x02 \x01(\x04R\x03uid\x12\x14\n" +
 	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
 	"\acontent\x18\x04 \x01(\tR\acontent\x12\x1d\n" +
 	"\n" +
