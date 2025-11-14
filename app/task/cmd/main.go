@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"go-micro-todoList/app/task/repository/db/dao"
 	"go-micro-todoList/app/task/script"
-	_ "go-micro-todoList/app/task/service"
+	"go-micro-todoList/app/task/service"
+	"go-micro-todoList/idl/pb"
+
 	"go-micro-todoList/config"
-	_ "go-micro-todoList/idl/pb"
 
 	"go-micro.dev/v4"
 	"go-micro.dev/v4/registry"
@@ -29,7 +30,7 @@ func main() {
 	)
 
 	microService.Init()
-	// _ = pb.RegisterUserServiceHandler(microService.Server(), service.GetUserServ())
+	_ = pb.RegisterTaskServiceHandler(microService.Server(), service.GetTaskServ())
 	_ = microService.Run()
 }
 
