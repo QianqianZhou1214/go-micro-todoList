@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"go-micro-todoList/app/task/repository/db/dao"
+	"go-micro-todoList/app/task/repository/mq"
 	"go-micro-todoList/app/task/script"
 	"go-micro-todoList/app/task/service"
 	"go-micro-todoList/idl/pb"
@@ -17,6 +18,7 @@ import (
 func main() {
 	config.Init()
 	dao.InitDB()
+	mq.InitRabbitMQ()
 	loadingScript()
 
 	etcdReg := registry.NewRegistry(
