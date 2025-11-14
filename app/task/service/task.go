@@ -11,11 +11,11 @@ import (
 	"sync"
 )
 
-type TaskServ struct {
-}
-
 var TaskSevIns *TaskServ
 var TaskSrvOnce sync.Once
+
+type TaskServ struct {
+}
 
 // GetTaskServ Lazy Singleton Pattern
 func GetTaskServ() *TaskServ {
@@ -50,7 +50,7 @@ func TaskMQ2DB(ctx context.Context, req *pb.TaskRequest) (err error) {
 
 }
 
-func (*TaskServ) GetTaskList(ctx context.Context, req *pb.TaskRequest, resp *pb.TaskListResponse) (err error) {
+func (*TaskServ) GetTasksList(ctx context.Context, req *pb.TaskRequest, resp *pb.TaskListResponse) (err error) {
 	resp.Code = e.Success
 	if req.Limit == 0 {
 		req.Limit = 10

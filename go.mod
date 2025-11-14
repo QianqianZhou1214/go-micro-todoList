@@ -8,7 +8,6 @@ require (
 	github.com/streadway/amqp v1.1.0
 	go-micro.dev/v4 v4.9.0
 	golang.org/x/crypto v0.40.0
-	google.golang.org/grpc v1.76.0
 	google.golang.org/protobuf v1.36.9
 	gopkg.in/ini.v1 v1.67.0
 	gorm.io/driver/mysql v1.6.0
@@ -84,7 +83,6 @@ require (
 	golang.org/x/sys v0.35.0 // indirect
 	golang.org/x/text v0.27.0 // indirect
 	golang.org/x/tools v0.34.0 // indirect
-	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

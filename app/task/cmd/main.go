@@ -17,6 +17,7 @@ import (
 func main() {
 	config.Init()
 	dao.InitDB()
+	loadingScript()
 
 	etcdReg := registry.NewRegistry(
 		registry.Addrs(fmt.Sprintf("%s:%s", config.EtcdHost, config.EtcdPort)),
