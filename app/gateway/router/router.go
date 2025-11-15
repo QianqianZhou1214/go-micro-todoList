@@ -2,6 +2,7 @@ package router
 
 import (
 	"go-micro-todoList/app/gateway/http"
+	"go-micro-todoList/app/gateway/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,6 +16,16 @@ func NewRouter() *gin.Engine {
 		})
 		v1.POST("/user/register", http.UserRegisterHandler)
 		v1.POST("/user/login", http.UserLoginHandler)
+
+		authed := v1.Group("/")
+		authed.Use(middleware.JWT())
+		{
+			authed.POST("task", http.CreateTaskHandler)
+			authed.GET("get_task", http.GetTaskHandler)
+			authed.DELETE("delete_task", http.DeleteTaskHandler)
+			authed.PUT("update_task", http.UpdateTaskHandler)
+			authed.GET("list_task", http.ListTaskHandler)
+		}
 	}
 	return ginRouter
 }
