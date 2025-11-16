@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"os"
 
 	"gopkg.in/ini.v1"
 )
@@ -28,7 +29,11 @@ var (
 )
 
 func Init() {
-	file, err := ini.Load("./config/config.ini")
+	configPath := os.Getenv("CONFIG_PATH")
+	if configPath == "" {
+		configPath = "./config/config.ini"
+	}
+	file, err := ini.Load(configPath)
 	if err != nil {
 		fmt.Println("config.ini not found", err)
 	}
